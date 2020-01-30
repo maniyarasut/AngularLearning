@@ -7,10 +7,12 @@ import { ServersComponent } from './servers/servers.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ServerAddComponent } from './servers/server-add/server-add.component';
+import { CreateUserComponent } from './user/create-user/create-user.component';
 
 
 const routes: Routes = [
   { path: 'users', component: UserComponent,children:[
+    {path:"add",component: CreateUserComponent},
     { path: ':id/:name', component: UsersComponent }
   ] },
    {

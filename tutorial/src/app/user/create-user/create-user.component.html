@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row">
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-md-offset-2">
+                    <label for="userName">UserName</label>
+                    <input type="text" formControlName="userName" id="userName" class="form-control">
+                    <p *ngIf="!userForm.get('userName').valid && userForm.get('userName').touched" style="font-size: small;color: red;">*Enter a valid user name</p>
+                   
+                </div>
+                <div class="col-sm-offset-1 col-md-offset-2">
+                    <label for="email">E-Mail address</label>
+                    <input type="text" formControlName="email" id="email" class="form-control">
+                    <p *ngIf="!userForm.get('email').valid && userForm.get('email').touched" style="font-size: small;color: red;">Enter a valid email address</p>
+                </div>
+                <div *ngFor=" let gend of genders" >
+                    <input type="radio"  formControlName="gender" id="{{gend}}" [value]="gend">
+                    {{gend}}
+                </div>
+                <div class="=col-sm-12">
+                    <br>
+                    <button [disabled]="!userForm.valid" type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

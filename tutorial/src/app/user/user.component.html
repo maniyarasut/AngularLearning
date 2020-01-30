@@ -1,9 +1,15 @@
 <div class="container-fluid ">
     <h6>Welcome to User Manager</h6>
-    <div class="row" *ngFor="let user of userList">
+    <div class="row" >
         <div class="col-xl-12">
+            <button type="button" class="btn btn-primary" [routerLink]="['add']">Create New User</button>
+        </div>
+        <div class="col-xl-12">
+            <br>
+        </div>
+        <div class="col-xl-12" *ngFor="let user of userList">
             <div class="list-group ">
-                <a [routerLink]="['/users',user.id,user.name]" class="list-group-item list-group-item-action">
+                <a [routerLink]="['/users',user.email,user.name]" class="list-group-item list-group-item-action">
                     {{user.name}}
                 </a>
             </div>
@@ -11,6 +17,8 @@
     </div>
     <div class="row">
         <div class="col-xl-12">
+            <br>
+            <hr>
             <router-outlet></router-outlet>
         </div>
     </div>

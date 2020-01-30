@@ -11,8 +11,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ServerAddComponent } from './servers/server-add/server-add.component';
 import { UserComponent } from './user/user.component';
 import { UsersComponent } from './user/users/users.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServerService } from './shared/serverService';
+import { CreateUserComponent } from './user/create-user/create-user.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +25,14 @@ import { ServerService } from './shared/serverService';
     PageNotFoundComponent,
     ServerAddComponent,
     UserComponent,
-    UsersComponent
+    UsersComponent,
+    CreateUserComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule
   ],
   providers: [ServerService],
