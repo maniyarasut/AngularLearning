@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <br>
+    <h6>{{server.serverName}} is {{server.serverStatus}}</h6>
+</div>
+<br>
+<button *ngIf="server.serverStatus!=='RUNNING' && server.serverStatus!=='TERMINATED'" type="button"
+    class="btn btn-success" (click)="startServer(server.serverName)">Start Server</button> &nbsp;
+<button *ngIf="server.serverStatus!=='STOPPED'  && server.serverStatus!=='TERMINATED'" type="button"
+    class="btn btn-danger" (click)="stopServer(server.serverName)">Stop Server</button> &nbsp;
+<button *ngIf="server.serverStatus!=='TERMINATED'" type="button" class="btn btn-secondary"
+    (click)="terminateServer(server.serverName)">Terminate Server</button> &nbsp;
+    <!-- <div class="alert alert-success" role="alert">
+        This is a success alert—check it out!
+    </div>
+    <div class="alert alert-danger" role="alert">
+        This is a danger alert—check it out!
+    </div>
+    <div class="alert alert-warning" role="alert">
+        This is a warning alert—check it out!
+    </div> -->
