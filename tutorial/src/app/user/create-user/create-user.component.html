@@ -14,23 +14,24 @@
                     <p *ngIf="!userForm.get('email').valid && userForm.get('email').touched" style="font-size: small;color: red;">Enter a valid email address</p>
                 </div>
                 <div class="col-sm-offset-1 col-md-offset-2">
-                    <label for="dob">Enter your DOB</label>
-                    <input type="text" formControlName="dob" id="dob" class="form-control">
+                    <label for="dob">Enter your DOB:</label>
+                    <br>
+                    <p-calendar formControlName="dob" ></p-calendar>
                     <p style="font-size: small">*Enter in DD-MM-YYYY format</p>
                     <p *ngIf="!userForm.get('dob').valid && userForm.get('dob').touched" style="font-size: small;color: red;">Enter date in valid format</p>
                 </div>
-                <form [formGroup]="address">
+                <div formGroupName="address">
                 <div class="col-sm-offset-1 col-md-offset-2">
                     <label>Address:</label><br>
                     <label for="streetname">Street Name</label>
                     <input type="text" formControlName="streetName" id="streetname" class="form-control">
                     <label for="country">Country</label>
-                    <input type="text" formControlName="address.country" id="country" class="form-control">
+                    <input type="text" formControlName="country" id="country" class="form-control">
                     <label for="zipcode">Zipcode</label>
                     <input type="text" formControlName="zipcode" id="zipcode" class="form-control">
-                    <p *ngIf="!userForm.get('zipcode').valid && userForm.get('zipcode').touched" style="font-size: small;color: red;">Enter valid Zip code</p>
+                    <p *ngIf="!userForm.get('address.zipcode').valid && userForm.get('address.zipcode').touched" style="font-size: small;color: red;">Enter valid Zip code</p>
                 </div>
-            </form>
+            </div>
                 
                 <div class="=col-sm-12">
                     <br>

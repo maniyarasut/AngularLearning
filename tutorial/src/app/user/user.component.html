@@ -5,7 +5,7 @@
        </div>
     </div>
     <div class="row  article-left ">
-        <div class="col med">
+        <div class="col table-responsive-xl">
             <table class="table table-bordered table-hover ">
                 <thead class="thead-light">
                     <tr>
@@ -14,15 +14,13 @@
                         <th scope="col">DOB</th>
                     </tr>
                 </thead>
-                
                 <tbody *ngFor="let user of userList; let i = index" >
                    <tr>
                        <td>{{user.name}}</td>
                         <td>{{user.email}}</td>
-                        <td>{{user.dateOfBirth}}</td>
+                        <td>{{user.dateOfBirth| date}}</td>
                     </tr>
                 </tbody>
-               
             </table>
 
         </div>

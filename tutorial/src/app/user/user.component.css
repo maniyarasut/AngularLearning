@@ -6,13 +6,13 @@
 
  .article-left {
     padding-top: 10px;
-    max-width:50%;
+    max-width: 60%;
     float: left;
   }
 
   .article-right {
     float: right;
-    max-width:50%;
+    max-width: 35%;
     padding-top: 10px;
     padding-right: 10px;
   }

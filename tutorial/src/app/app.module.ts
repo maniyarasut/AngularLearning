@@ -15,6 +15,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServerService } from './shared/serverService';
 import { CreateUserComponent } from './user/create-user/create-user.component';
 import {HttpClientModule} from '@angular/common/http'
+import {CalendarModule} from 'primeng/calendar';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { DatePipe } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -32,12 +36,14 @@ import {HttpClientModule} from '@angular/common/http'
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CalendarModule
   ],
-  providers: [ServerService],
+  providers: [ServerService,DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
