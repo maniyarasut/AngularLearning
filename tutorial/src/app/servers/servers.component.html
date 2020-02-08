@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <h6>Welcome to Server Manager</h6><br>
+    <div class="row">
+        <a [routerLink]="['addserver']">
+            <div class="col-xl-12"><button type="button" class="btn btn-primary">Add New Server</button>
+            </div>
+        </a>
+        <div class="col-xl-12"><br></div>
+    </div>
+    <div class="row" *ngFor="let server of serversList">
+        <div class="col-xl-12">
+            <ul class="list-group">
+                <li class="list-group-item list-group ">
+                    <a [routerLink]="['server',server.serverName,server.serverStatus]"> {{server.serverName}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12">
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
+
+</div>

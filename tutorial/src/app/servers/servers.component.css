@@ -1,0 +1,9 @@
+.list-group { 
+    margin: 0; 
+    min-width: 60px;
+    width: 40%;
+ }
+
+ .example-fill-remaining-space {
+    flex: 1 1 auto;
+  }

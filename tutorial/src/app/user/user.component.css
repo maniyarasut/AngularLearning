@@ -1,0 +1,20 @@
+.list-group { 
+    margin: 10; 
+    min-width: 10px;
+    width: 20%;
+ }
+
+ .article-left {
+    padding-top: 10px;
+    max-width:50%;
+    float: left;
+  }
+
+  .article-right {
+    float: right;
+    max-width:50%;
+    padding-top: 10px;
+    padding-right: 10px;
+  }
+
+
