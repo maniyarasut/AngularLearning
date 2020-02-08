@@ -1,4 +1,42 @@
-<br>
-<p>
-Welcome {{name}}! your emailId is {{id}}
-</p>
+<div class="container-fluid">
+
+    <form [formGroup]="editForm" (ngSubmit)="editUser()">
+        <div class="form-group">
+
+            <label for="name">Name</label>
+            <input [readonly]="isDisabled" type="text" formControlName="name" id="name" class="form-control">
+
+            <label for="email">email</label>
+            <input [readonly]="isDisabled" type="text" formControlName="email" id="email" class="form-control">
+
+            <label for="dateOfBirth">Date of Birth</label><br>
+            <p-calendar  *ngIf="isDisabled===false" formControlName="dateOfBirth"></p-calendar>
+            <input *ngIf="isDisabled===true" readonly=true type="text" formControlName="dateOfBirth" id="dateOfBirth"
+                class="form-control">
+
+            <div formGroupName="address">
+
+                <label style="font-weight: bold;">Address:</label><br>
+                <label for="streetname">Street Name</label>
+                <input [readonly]="isDisabled" type="text" formControlName="streetName" id="streetname"
+                    class="form-control">
+                <label for="city">City</label>
+                <input [readonly]="isDisabled"  type="text" formControlName="city" id="city" class="form-control">
+                <label for="country">Country</label>
+                <input [readonly]="isDisabled" type="text" formControlName="country" id="country" class="form-control">
+                <label for="zipcode">Zipcode</label>
+                <input [readonly]="isDisabled" type="text" formControlName="zipcode" id="zipcode" class="form-control">
+
+            </div>
+
+        </div>
+        <div >
+            <button type="button" class="btn btn-primary" (click)="OnEdit()"> Edit</button> &nbsp; &nbsp;
+            <button *ngIf="isDisabled===false" type="submit" class="btn btn-primary"> Save</button>&nbsp; &nbsp;
+            <button *ngIf="isDisabled===false" type="button" (click)="onClear()" class="btn btn-primary"> Clear
+                Form</button>&nbsp; &nbsp;
+                <button type="button" class="btn btn-primary" (click)="OnDelete()"> Delete</button>
+        </div>
+    </form>
+
+</div>

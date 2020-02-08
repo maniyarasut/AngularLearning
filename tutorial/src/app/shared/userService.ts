@@ -28,4 +28,16 @@ export class UserService
         return this.http.post(this.usersUrl,user);
     }
 
+    upDateUser(user:User)
+    {
+        console.log(user);
+        return this.http.put(this.usersUrl,user);
+    }
+
+    deleteUser(id:number)
+    {
+        console.log(this.usersUrl+'/'+id);
+        return this.http.delete(this.usersUrl+'/'+id);
+    }
+
 }

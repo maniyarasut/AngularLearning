@@ -11,6 +11,8 @@ import { CreateUserComponent } from './user/create-user/create-user.component';
 
 
 const routes: Routes = [
+  { path: 'redirect/:path', redirectTo: window.location.pathname},
+  { path: 'user', component: UsersComponent},
   { path: 'users', component: UserComponent,children:[
     {path:"add",component: CreateUserComponent},
     { path: ':id/:name', component: UsersComponent }
