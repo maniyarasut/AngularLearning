@@ -6,19 +6,21 @@
     </div>
     <div class="row  article-left ">
         <div class="col table-responsive-xl">
-            <table class="table table-bordered table-hover ">
+            <table class="table table-bordered">
                 <thead class="thead-light">
                     <tr>
                         <th scope="col">Name</th>
                         <th scope="col">email</th>
                         <th scope="col">DOB</th>
+                        <th scope="col">#</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let user of userList; let i = index" >
-                   <tr>
-                       <td>{{user.name}}</td>
+                   <tr >
+                       <td (click) = "onClick(user)">{{user.name}}</td>
                         <td>{{user.email}}</td>
                         <td>{{user.dateOfBirth| date}}</td>
+                        <td><input type='image' class="img-responsive" [src]="delImage" (click)="OnDelete(user.id)" style="max-height: 15px;"></td>
                     </tr>
                 </tbody>
             </table>

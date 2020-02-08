@@ -5,6 +5,7 @@ import { NewUser } from 'src/app/shared/newUser.model';
 import { User } from 'src/app/shared/user.model';
 import { Address } from 'src/app/shared/address';
 import { DatePipe } from '@angular/common'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-user',
@@ -14,7 +15,7 @@ import { DatePipe } from '@angular/common'
 export class CreateUserComponent implements OnInit {
 userForm: FormGroup;
 genders:string[]=["Male","Female","Others"];
-  constructor(private userService:UserService,public datepipe: DatePipe) { }
+  constructor(private userService:UserService,public datepipe: DatePipe, public route:Router) { }
 
   ngOnInit() {
     this.userForm= new FormGroup({
@@ -39,6 +40,7 @@ genders:string[]=["Male","Female","Others"];
       data=>console.log(data)
     )
     this.userForm.reset();
+    this.route.navigate(['users']);
   }
 
 }

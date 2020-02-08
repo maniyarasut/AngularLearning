@@ -1,5 +1,5 @@
 export class Address{
 
-    constructor(private id:number,private streetName:string,private country:string,private zipcode:number,private city:string)
+    constructor(public id:number,public streetName:string,public country:string,public zipcode:number,public city:string)
     {};
 }
