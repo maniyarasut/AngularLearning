@@ -35,7 +35,7 @@
             <button *ngIf="isDisabled===false" type="submit" class="btn btn-primary"> Save</button>&nbsp; &nbsp;
             <button *ngIf="isDisabled===false" type="button" (click)="onClear()" class="btn btn-primary"> Clear
                 Form</button>&nbsp; &nbsp;
-                <button type="button" class="btn btn-primary" (click)="OnDelete()"> Delete</button>
+                <button type="button" class="btn btn-primary" (click)="OnDelete(editForm.get('id').value)"> Delete</button>
         </div>
     </form>
 
