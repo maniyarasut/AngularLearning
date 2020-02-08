@@ -1,24 +1,36 @@
-<div class="container-fluid ">
-    <h6>Welcome to User Manager</h6>
-    <div class="row" >
-        <div class="col-xl-12">
+<div class="container-fluid article-left ">
+    <div class="row">
+        <div class="col">
             <button type="button" class="btn btn-primary" [routerLink]="['add']">Create New User</button>
-        </div>
-        <div class="col-xl-12">
-            <br>
-        </div>
-        <div class="col-xl-12" *ngFor="let user of userList">
-            <div class="list-group ">
-                <a [routerLink]="['/users',user.email,user.name]" class="list-group-item list-group-item-action">
-                    {{user.name}}
-                </a>
-            </div>
+       </div>
+    </div>
+    <div class="row  article-left ">
+        <div class="col med">
+            <table class="table table-bordered table-hover ">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">email</th>
+                        <th scope="col">DOB</th>
+                    </tr>
+                </thead>
+                
+                <tbody *ngFor="let user of userList; let i = index" >
+                   <tr>
+                       <td>{{user.name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.dateOfBirth}}</td>
+                    </tr>
+                </tbody>
+               
+            </table>
+
         </div>
     </div>
+</div>
+<div class="container-fluid article-right ">
     <div class="row">
-        <div class="col-xl-12">
-            <br>
-            <hr>
+        <div class="col">
             <router-outlet></router-outlet>
         </div>
     </div>

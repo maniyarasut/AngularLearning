@@ -17,7 +17,13 @@ genders:string[]=["Male","Female","Others"];
     this.userForm= new FormGroup({
       'userName': new FormControl(null,[Validators.required]),
       'email': new FormControl(null,[Validators.required,Validators.email]),
-      'gender': new FormControl('Male')
+      'dob': new FormControl(null,[Validators.required,Validators.pattern('/^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$/')]),
+      'address': new FormGroup({
+        'streetName': new FormControl(null),
+        'city': new FormControl(null),
+        'country': new FormControl(null,[Validators.required]),
+        'zipcode': new FormControl('India',[Validators.required])
+      })
     });
   }
 

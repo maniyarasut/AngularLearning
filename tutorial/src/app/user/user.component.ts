@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../shared/user.model';
-import { NewUser } from '../shared/newUser.model';
 import { UserService } from '../shared/userService';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-user',
@@ -9,11 +9,20 @@ import { UserService } from '../shared/userService';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  userList: NewUser[]=[];
-  constructor(private userService:UserService) { }
+  userList: User[]=[];
+  constructor(private userService:UserService, private http:HttpClient) { }
 
-  ngOnInit() {
-    this.userList=this.userService.getAllUsers();
+  ngOnInit( ) {
+    this.userService.getAllUsers().subscribe(
+      (data: User[]) =>{
+        let tempusers:any[]=[];
+        data.forEach(function(user)
+        {  tempusers.push(user);}
+        )
+        this.userList=tempusers;
+      }
+    )
+    
   }
 
 }

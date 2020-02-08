@@ -14,6 +14,7 @@ import { UsersComponent } from './user/users/users.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServerService } from './shared/serverService';
 import { CreateUserComponent } from './user/create-user/create-user.component';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CreateUserComponent } from './user/create-user/create-user.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [ServerService],
   bootstrap: [AppComponent]
