@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { NewUser } from './newUser.model';
 import { HttpClient } from '@angular/common/http';
+import { User } from './user.model';
 
 @Injectable({providedIn:'root'})
 export class UserService 
 {
-    private getUsersUrl:string='http://localhost:8765/student/student';
+    private usersUrl:string='http://localhost:8765/student/student';
 
     constructor(private http:HttpClient)
     {
@@ -18,12 +19,13 @@ export class UserService
       ];
      getAllUsers()
     {
-        return this.http.get(this.getUsersUrl);
+        return this.http.get(this.usersUrl);
     }
     
-    addUser(user:NewUser)
+    addUser(user:User)
     {
-        this.usersList.push(user);
+        console.log(user);
+        return this.http.post(this.usersUrl,user);
     }
 
 }
